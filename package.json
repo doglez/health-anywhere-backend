@@ -22,7 +22,6 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-rate-limit": "^7.4.1",
-    "express-xss-sanitizer": "^1.2.0",
     "health-anywhere-be": "file:",
     "helmet": "^8.0.0",
     "hpp": "^0.2.3",
