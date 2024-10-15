@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Super Admin",
+        "birthday": "1985-06-15T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "superadmin@example.com",
+        "phone": 1234567890,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Admin",
+        "birthday": "1990-03-20T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "admin@example.com",
+        "phone": 9876543210,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Patient",
+        "birthday": "1982-11-05T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "patient@example.com",
+        "phone": 5551112222,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Emily Brown",
+        "birthday": "1998-07-12T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "emilybrown@example.com",
+        "phone": 2223334444,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Michael Wilson",
+        "birthday": "1980-09-30T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "michaelwilson@example.com",
+        "phone": 9998887777,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Sarah Miller",
+        "birthday": "1992-02-25T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "sarahmiller@example.com",
+        "phone": 7779998888,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Christopher Lee",
+        "birthday": "1995-08-10T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "christopherlee@example.com",
+        "phone": 4445556666,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Olivia Anderson",
+        "birthday": "1988-04-03T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "oliviaanderson@example.com",
+        "phone": 6667778888,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Daniel Taylor",
+        "birthday": "1987-10-18T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "danieltaylor@example.com",
+        "phone": 3334445555,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    },
+    {
+        "name": "Sophia Walker",
+        "birthday": "1991-12-08T00:00:00Z",
+        "avatarURL": "https://fakeimg.pl/200x200/cccccc/909090",
+        "email": "sophiawalker@example.com",
+        "phone": 8887776666,
+        "password": "$2a$10$49KqlG8VjZ0E4QndK/uSf.ERW74D6rsgUsIOiLvrsY5tLcRvNRewe"
+    }
+]
