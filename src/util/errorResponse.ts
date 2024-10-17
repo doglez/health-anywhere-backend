@@ -1,31 +1,34 @@
 /**
- * A custom error class that extends the built-in `Error` class to include additional properties such as `code` and `status`.
+ * Custom error class for handling API errors.
  *
+ * @extends Error
  * @remarks
- * This class is used to create custom error responses with a specific error `code` and HTTP `status` code.
- * It can be utilized to throw more structured errors in applications, particularly when handling API errors.
+ * This class extends the native JavaScript `Error` class to include additional
+ * properties: `title` (an HTTP status description") and
+ * `status` (the corresponding HTTP status code). It is used to provide consistent
+ * error responses throughout the application.
  */
 class ErrorResponse extends Error {
     /**
-     * A custom error code for identifying the type of error.
+     * A string representing the HTTP status description (e.g., "BAD REQUEST").
      */
-    code: string;
+    title: string;
 
     /**
-     * The HTTP status code associated with the error.
+     * The HTTP status code associated with the error (e.g., 400).
      */
     status: number;
 
     /**
-     * Creates an instance of `ErrorResponse`.
+     * Constructs a new `ErrorResponse` instance.
      *
-     * @param message - The error message.
-     * @param code - A custom code to represent the error type.
-     * @param status - The HTTP status code to be returned with the error.
+     * @param message - The detailed error message.
+     * @param title - A short description of the HTTP status (e.g., "BAD REQUEST").
+     * @param status - The HTTP status code (e.g., 400).
      */
-    constructor(message: string, code: string, status: number) {
+    constructor(message: string, title: string, status: number) {
         super(message);
-        this.code = code;
+        this.title = title;
         this.status = status;
     }
 }

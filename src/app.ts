@@ -6,6 +6,7 @@ import rateLimit from "express-rate-limit";
 import hpp from "hpp";
 import cors from "cors";
 import router from "./router";
+import errorHandler from "./middleware/errorHandler";
 
 const app = express();
 
@@ -69,5 +70,7 @@ app.use(
 );
 
 app.use("/api/v1", router);
+
+app.use(errorHandler);
 
 export default app;
