@@ -5,6 +5,7 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import hpp from "hpp";
 import cors from "cors";
+import router from "./router";
 
 const app = express();
 
@@ -67,8 +68,6 @@ app.use(
     })
 );
 
-app.get("/api/v1", (_req, _res) => {
-    console.log("first");
-});
+app.use("/api/v1", router);
 
 export default app;
