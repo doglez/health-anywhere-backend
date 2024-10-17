@@ -4,17 +4,33 @@ import httpStatus from "http-status";
 import { sequelize } from "../database/database.connection";
 
 /**
- * Enum for user status.
- * Represents the state of a user in the system.
+ * Enum representing the possible statuses for a user.
  *
- * - INACTIVE: The user is inactive and cannot access the system.
- * - ACTIVE: The user is active and can access the system.
+ * @enum {string}
+ * @property INACTIVE - The user is inactive and cannot access the system.
+ * @property ACTIVE - The user is active and can access the system.
  */
 export enum UserStatus {
     INACTIVE = "inactive",
     ACTIVE = "active",
 }
 
+/**
+ * Type representing the attributes of a User.
+ *
+ * @property id - Unique identifier for the user.
+ * @property name - Full name of the user.
+ * @property birthday - The user's date of birth.
+ * @property avatarURL - URL of the user's avatar.
+ * @property email - Email address of the user (must be unique).
+ * @property phone - Phone number of the user (must be unique).
+ * @property password - User's hashed password.
+ * @property googleId - Google account ID associated with the user.
+ * @property facebookId - Facebook account ID associated with the user.
+ * @property resetPasswordToken - Token for password reset operations.
+ * @property resetPasswordExpire - Expiration date for the password reset token.
+ * @property status - Current status of the user, either ACTIVE or INACTIVE.
+ */
 export type UserAttributes = {
     id: number;
     name: string;
@@ -30,6 +46,10 @@ export type UserAttributes = {
     status: UserStatus;
 };
 
+/**
+ * Type representing optional attributes for user creation.
+ * These attributes are not required when creating a new user.
+ */
 export type UserCreationAttributes = Optional<
     UserAttributes,
     | "id"
@@ -41,6 +61,13 @@ export type UserCreationAttributes = Optional<
     | "status"
 >;
 
+/**
+ * Sequelize model representing the User entity.
+ *
+ * @remarks
+ * This model defines the schema, validations, and behaviors for User objects stored
+ * in the database. It includes custom setters for name and email validation.
+ */
 class User extends Model<UserAttributes, UserCreationAttributes> {
     declare id: number;
     declare name: string;
@@ -56,6 +83,7 @@ class User extends Model<UserAttributes, UserCreationAttributes> {
     declare status: UserStatus;
 }
 
+// Initialize the User model with attributes and options
 User.init(
     {
         id: {
@@ -96,17 +124,6 @@ User.init(
             type: DataTypes.STRING(100),
             allowNull: false,
             unique: true,
-            set(val: string) {
-                if (/\d/.test(val)) {
-                    throw new ErrorResponse(
-                        `email_format_validation`,
-                        httpStatus["400_NAME"],
-                        httpStatus.BAD_REQUEST
-                    );
-                }
-
-                this.setDataValue("email", val.toLowerCase());
-            },
         },
         phone: {
             type: DataTypes.BIGINT,
