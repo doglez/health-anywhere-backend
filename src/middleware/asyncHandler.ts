@@ -14,8 +14,31 @@ import { NextFunction, Request, Response } from "express";
  *     res.json(data);
  * }));
  */
-const asyncHandler =
+export const controllerAsyncHandler =
     (fn: Function) => (req: Request, res: Response, next: NextFunction) =>
         Promise.resolve(fn(req, res, next)).catch(next);
 
-export default asyncHandler;
+/**
+ * Higher-order function to wrap async service methods and catch errors.
+ * Any errors are thrown to be handled by the controller or middleware.
+ *
+ * @param fn - The async service function to wrap.
+ * @returns A new function that ensures errors are caught and propagated.
+ */
+export const serviceAsyncHandler = <T, Args extends any[]>(
+    fn: (...args: Args) => Promise<T>
+): ((...args: Args) => Promise<T>) => {
+    return async (...args: Args): Promise<T> => {
+        try {
+            return await fn(...args);
+        } catch (error) {
+            if (error instanceof Error) {
+                console.error(`Service Error: ${error.message}`);
+                throw error;
+            } else {
+                console.error("An unknown error occurred.");
+                throw new Error("An unknown error occurred.");
+            }
+        }
+    };
+};
