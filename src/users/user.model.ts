@@ -157,6 +157,8 @@ User.init(
             attributes: {
                 exclude: [
                     "password",
+                    "googleId",
+                    "facebookId",
                     "resetPasswordToken",
                     "resetPasswordExpire",
                     "createdAt",

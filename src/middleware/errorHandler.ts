@@ -27,8 +27,8 @@ const errorHandler = (
     }
 
     let error = new ErrorResponse(
-        err.message || "Internal Server Error",
-        httpStatus["500_NAME"],
+        err.message,
+        err.title || httpStatus["500_NAME"],
         err.status || httpStatus.INTERNAL_SERVER_ERROR
     );
 
