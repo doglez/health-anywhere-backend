@@ -61,9 +61,10 @@ const errorHandler = (
     }
 
     res.status(error.status).json({
-        title: error.title,
-        status: error.status,
-        details: error.message,
+        error: {
+            title: error.title,
+            details: error.message,
+        },
     });
 };
 

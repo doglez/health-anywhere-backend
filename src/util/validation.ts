@@ -20,7 +20,7 @@ export const validateDto = async (dto: any) => {
 
         throw new ErrorResponse(
             message,
-            httpStatus["404_NAME"],
+            httpStatus["400_NAME"],
             httpStatus.BAD_REQUEST
         );
     }
