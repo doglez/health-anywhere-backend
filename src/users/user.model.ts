@@ -1,4 +1,9 @@
-import { DataTypes, Model, Optional } from "sequelize";
+import {
+    DataTypes,
+    InferAttributes,
+    InferCreationAttributes,
+    Model,
+} from "sequelize";
 import ErrorResponse from "../util/errorResponse";
 import httpStatus from "http-status";
 import { sequelize } from "../database/database.connection";
@@ -16,59 +21,13 @@ export enum UserStatus {
 }
 
 /**
- * Type representing the attributes of a User.
- *
- * @property id - Unique identifier for the user.
- * @property name - Full name of the user.
- * @property birthday - The user's date of birth.
- * @property avatarURL - URL of the user's avatar.
- * @property email - Email address of the user (must be unique).
- * @property phone - Phone number of the user (must be unique).
- * @property password - User's hashed password.
- * @property googleId - Google account ID associated with the user.
- * @property facebookId - Facebook account ID associated with the user.
- * @property resetPasswordToken - Token for password reset operations.
- * @property resetPasswordExpire - Expiration date for the password reset token.
- * @property status - Current status of the user, either ACTIVE or INACTIVE.
- */
-export type UserAttributes = {
-    id: number;
-    name: string;
-    birthday: Date;
-    avatarURL: string;
-    email: string;
-    phone: number;
-    password: string;
-    googleId: string;
-    facebookId: string;
-    resetPasswordToken: string;
-    resetPasswordExpire: Date;
-    status: UserStatus;
-};
-
-/**
- * Type representing optional attributes for user creation.
- * These attributes are not required when creating a new user.
- */
-export type UserCreationAttributes = Optional<
-    UserAttributes,
-    | "id"
-    | "password"
-    | "googleId"
-    | "facebookId"
-    | "resetPasswordToken"
-    | "resetPasswordExpire"
-    | "status"
->;
-
-/**
  * Sequelize model representing the User entity.
  *
  * @remarks
  * This model defines the schema, validations, and behaviors for User objects stored
  * in the database. It includes custom setters for name and email validation.
  */
-class User extends Model<UserAttributes, UserCreationAttributes> {
+class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
     declare id: number;
     declare name: string;
     declare birthday: Date;

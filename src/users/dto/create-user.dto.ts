@@ -8,7 +8,6 @@ import {
     Length,
     Matches,
 } from "class-validator";
-import { UserCreationAttributes } from "../user.model";
 
 /**
  * Data Transfer Object (DTO) for creating a user.
@@ -17,20 +16,7 @@ import { UserCreationAttributes } from "../user.model";
  * It includes mandatory fields like `name`, `birthday`, `avatarURL`, `email`, and `phone`,
  * and optional fields such as `password`, `googleId`, and `facebookId`.
  */
-class CreateUserDto
-    implements
-        Pick<
-            UserCreationAttributes,
-            | "name"
-            | "birthday"
-            | "avatarURL"
-            | "email"
-            | "phone"
-            | "password"
-            | "googleId"
-            | "facebookId"
-        >
-{
+class CreateUserDto {
     @IsString({
         message: "Name must be a string",
     })

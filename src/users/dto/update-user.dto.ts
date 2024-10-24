@@ -9,7 +9,7 @@ import {
     Length,
     Matches,
 } from "class-validator";
-import { UserCreationAttributes, UserStatus } from "../user.model";
+import { UserStatus } from "../user.model";
 
 /**
  * Data Transfer Object (DTO) for updating  a user.
@@ -18,23 +18,7 @@ import { UserCreationAttributes, UserStatus } from "../user.model";
  * All the fields are optional `name`, `birthday`, `avatarURL`, `email`, `phone`,
  * `password`, `googleId`, and `facebookId`.
  */
-export class UpdateUserDto
-    implements
-        Partial<
-            Pick<
-                UserCreationAttributes,
-                | "name"
-                | "birthday"
-                | "avatarURL"
-                | "email"
-                | "phone"
-                | "password"
-                | "googleId"
-                | "facebookId"
-                | "status"
-            >
-        >
-{
+export class UpdateUserDto {
     @IsOptional()
     @IsString({
         message: "Name must be a string",
