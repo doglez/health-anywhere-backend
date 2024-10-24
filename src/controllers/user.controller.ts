@@ -4,7 +4,7 @@ import { controllerAsyncHandler } from "../middlewares/asyncHandler";
 import ErrorResponse from "../utils/errorResponse";
 import { validateDto } from "../utils/validation";
 import User, { UserStatus } from "../models/user.model";
-import UpdateUserDto from "../dtos/update-user.dto";
+import UpdateUserDto from "../dtos/user/update-user.dto";
 
 /**
  * Controller class responsible for handling user-related HTTP requests.

@@ -1,4 +1,5 @@
 import {
+    CreationOptional,
     DataTypes,
     InferAttributes,
     InferCreationAttributes,
@@ -7,6 +8,7 @@ import {
 import ErrorResponse from "../utils/errorResponse";
 import httpStatus from "http-status";
 import { sequelize } from "../database/database.connection";
+import { Role } from "../roles";
 
 /**
  * Enum representing the possible statuses for a user.
@@ -31,15 +33,16 @@ class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
     declare id: number;
     declare name: string;
     declare birthday: Date;
-    declare avatarURL: string;
+    declare avatarURL: CreationOptional<string>;
     declare email: string;
-    declare phone: number | null;
-    declare password: string;
-    declare googleId: string;
-    declare facebookId: string;
-    declare resetPasswordToken: string | null;
-    declare resetPasswordExpire: Date | null;
-    declare status: UserStatus;
+    declare phone: CreationOptional<number>;
+    declare password: CreationOptional<string>;
+    declare googleId: CreationOptional<string>;
+    declare facebookId: CreationOptional<string>;
+    declare resetPasswordToken: CreationOptional<string>;
+    declare resetPasswordExpire: CreationOptional<Date>;
+    declare role: CreationOptional<string>;
+    declare status: CreationOptional<UserStatus>;
 }
 
 // Initialize the User model with attributes and options
@@ -102,6 +105,14 @@ User.init(
         },
         resetPasswordExpire: {
             type: DataTypes.DATE,
+        },
+        role: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isIn: [Object.keys(Role)],
+            },
+            defaultValue: Role.PATIENT.name,
         },
         status: {
             type: DataTypes.ENUM(UserStatus.ACTIVE, UserStatus.INACTIVE),
