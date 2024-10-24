@@ -4,7 +4,7 @@ import {
     openDBConnection,
     sequelize,
 } from "../database/database.connection";
-import User from "../users/user.model";
+import User from "../models/user.model";
 import FakeData from "../database/FakeData";
 import app from "../app";
 import colors from "colors";
