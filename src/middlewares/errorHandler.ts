@@ -1,6 +1,6 @@
 import httpStatus from "http-status";
 import { NODE_ENV } from "../config/configuration";
-import ErrorResponse from "../util/errorResponse";
+import ErrorResponse from "../utils/errorResponse";
 import { NextFunction, Request, Response } from "express";
 
 /**

@@ -4,7 +4,7 @@ import {
     InferCreationAttributes,
     Model,
 } from "sequelize";
-import ErrorResponse from "../util/errorResponse";
+import ErrorResponse from "../utils/errorResponse";
 import httpStatus from "http-status";
 import { sequelize } from "../database/database.connection";
 

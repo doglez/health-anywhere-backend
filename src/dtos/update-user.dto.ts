@@ -9,7 +9,7 @@ import {
     Length,
     Matches,
 } from "class-validator";
-import { UserStatus } from "../user.model";
+import { UserStatus } from "../models/user.model";
 
 /**
  * Data Transfer Object (DTO) for updating  a user.

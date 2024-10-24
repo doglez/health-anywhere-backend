@@ -1,6 +1,6 @@
 import colors from "colors";
 import { openDBConnection, sequelize } from "./database.connection";
-import User from "../users/user.model";
+import User from "../models/user.model";
 import FakeData from "./FakeData";
 
 colors.enable();

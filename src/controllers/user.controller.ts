@@ -1,11 +1,10 @@
 import { NextFunction, Request, Response } from "express";
 import httpStatus from "http-status";
-import { controllerAsyncHandler } from "../middleware/asyncHandler";
-import User, { UserStatus } from "./user.model";
-import ErrorResponse from "../util/errorResponse";
-import { validateDto } from "../util/validation";
-import UpdateUserDto from "./dto/update-user.dto";
-("../middleware/asyncHandler");
+import { controllerAsyncHandler } from "../middlewares/asyncHandler";
+import ErrorResponse from "../utils/errorResponse";
+import { validateDto } from "../utils/validation";
+import User, { UserStatus } from "../models/user.model";
+import UpdateUserDto from "../dtos/update-user.dto";
 
 /**
  * Controller class responsible for handling user-related HTTP requests.

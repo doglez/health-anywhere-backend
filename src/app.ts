@@ -5,10 +5,10 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import hpp from "hpp";
 import cors from "cors";
-import router from "./router";
-import errorHandler from "./middleware/errorHandler";
+import errorHandler from "./middlewares/errorHandler";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./swagger/swaggerSpec";
+import router from "./routes/router";
 
 const app = express();
 
