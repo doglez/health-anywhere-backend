@@ -10,6 +10,16 @@ const components = JSON.parse(
     fs.readFileSync(`${process.cwd()}/src/swagger/swagger.json`, "utf-8")
 );
 
+/**
+ * Swagger specification for the HealthAnywhere API.
+ *
+ * @remarks
+ * This specification follows the OpenAPI 3.0.0 standard and documents the API endpoints
+ * and components for the Health Anywhere application. It is used to generate the
+ * Swagger UI documentation and provide API consumers with detailed information.
+ *
+ * @see {@link https://swagger.io/specification/} for more details on OpenAPI specification.
+ */
 const swaggerSpec = swaggerJSDoc({
     definition: {
         openapi: "3.0.0",
