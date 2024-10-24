@@ -17,6 +17,7 @@ const jestConfig: Config = {
         "!**/src/interfaces/**",
         "!**/src/middleware/**",
         "!**/src/util/**",
+        "!**/src/swagger/**",
     ],
     coverageDirectory: "coverage",
     coverageProvider: "v8",
