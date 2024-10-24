@@ -44,7 +44,7 @@ class UserController {
      */
     findByEmail = controllerAsyncHandler(
         async (req: Request, res: Response, next: NextFunction) => {
-            const email = req.params.email;
+            const email = decodeURIComponent(req.params.email);
 
             const user = await User.findOne({ where: { email } });
 
@@ -100,7 +100,7 @@ class UserController {
 
     /**
      * Marks a user as inactive (soft delete) by their ID.
-     * 
+     *
      * @param req - The HTTP request containing the user's ID in the URL parameters.
      * @param res - The HTTP response used to confirm the soft delete.
      * @param next - The next middleware function to handle errors.

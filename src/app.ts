@@ -7,6 +7,8 @@ import hpp from "hpp";
 import cors from "cors";
 import router from "./router";
 import errorHandler from "./middleware/errorHandler";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./swagger/swaggerSpec";
 
 const app = express();
 
@@ -69,6 +71,7 @@ app.use(
     })
 );
 
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/v1", router);
 
 app.use(errorHandler);

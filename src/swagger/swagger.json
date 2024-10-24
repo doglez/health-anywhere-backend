@@ -1,0 +1,42 @@
+{
+    "schemas": {
+        "User": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The user ID"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the user"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "The email of the user"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the user (active/inactive)"
+                }
+            }
+        },
+        "UpdateUserDto": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The new name of the user"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "The new email of the user"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The new status of the user"
+                }
+            }
+        }
+    }
+}
